@@ -21,6 +21,9 @@ import (
 // like 64 bytes). In addition, it requires two copies of the underlying
 // datastructure (although the two datastructures can often share substructures
 // if they are immutable or otherwise goroutine-safe).
+//
+// See the associated example to get an idea of implementing reads and writes
+// on a variable protected by an LRMutex.
 type LRMutex struct {
 	// Used for initialization.
 	once sync.Once
